@@ -5,7 +5,7 @@
     <img src="">
     <div class="all-buttons" v-for="machine in machines">
       <label for="bt">MASCHINE {{ machine.id }}</label>
-      <toggle-button name="bt" v-model="machine.state"/>
+      <toggle-button name="bt" :sync="true" v-model="machine.state"/>
     </div>
   </div>  
 </template>
