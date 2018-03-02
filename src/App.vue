@@ -25,11 +25,6 @@ export default {
         {id: 6, state: false}
       ]
     }
-  },
-  methods () {
-    return {
-      swithState
-    }
   }
 }
 </script>
