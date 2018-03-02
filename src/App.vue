@@ -1,6 +1,12 @@
 <template>
   <div id="app">
-   <h1>{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
+    <img src="./assets/coffee_icon.png">
+    <img src="">
+    <div class="all-buttons" v-for="machine in machines">
+      <label for="bt">MASCHINE {{ machine.id }}</label>
+      <toggle-button name="bt" v-model="machine.state"/>
+    </div>
   </div>  
 </template>
 
@@ -9,7 +15,20 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome Vue Coffee App'
+      msg: 'Welcome Vue Coffee App',
+      machines: [
+        {id: 1, state: true},
+        {id: 2, state: false},
+        {id: 3, state: true},
+        {id: 4, state: false},
+        {id: 5, state: false},
+        {id: 6, state: false}
+      ]
+    }
+  },
+  methods () {
+    return {
+      swithState
     }
   }
 }
@@ -41,5 +60,10 @@ li {
 
 a {
   color: #42b983;
+}
+
+.all-buttons {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 </style>
