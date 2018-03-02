@@ -2,29 +2,22 @@
   <div id="app">
     <h1>{{ msg }}</h1>
     <img src="./assets/coffee_icon.png">
-    <img src="">
-    <div class="all-buttons" v-for="machine in machines">
-      <label for="bt">MASCHINE {{ machine.id }}</label>
-      <toggle-button name="bt" :sync="true" v-model="machine.state"/>
-    </div>
+    <app-buttons></app-buttons> 
   </div>  
 </template>
 
 <script>
+import Buttons from './Buttons.vue';
 export default {
   name: 'app',
   data () {
     return {
       msg: 'Welcome Vue Coffee App',
-      machines: [
-        {id: 1, state: true},
-        {id: 2, state: false},
-        {id: 3, state: true},
-        {id: 4, state: false},
-        {id: 5, state: false},
-        {id: 6, state: false}
-      ]
+      
     }
+  },
+  components: {
+    'app-buttons': Buttons
   }
 }
 </script>
